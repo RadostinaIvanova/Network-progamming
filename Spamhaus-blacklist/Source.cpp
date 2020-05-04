@@ -80,7 +80,6 @@ int main(int argc, char** argv) {
 		hints.ai_family = AF_INET;
 		hints.ai_socktype = SOCK_DGRAM;
 
-		//td::cout << converted;
 		int dwRetval = getaddrinfo(converted.c_str(), nullptr, &hints, &result);
 		if (dwRetval != 0) {
 			std::cout << "The IP address: " << argv[i] << " is NOT found in the Spamhaus blacklists.\n";
