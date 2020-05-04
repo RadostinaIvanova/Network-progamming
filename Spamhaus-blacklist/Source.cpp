@@ -6,7 +6,7 @@
 
 #pragma comment (lib, "ws2_32.lib")
 
-const char* spamhaus_dnsbl = "zen.spamhaus.org";
+const char* spamhaus_org = "zen.spamhaus.org";
 
 const std::string converter(const char* ip) {
 	std::string convertedAddr = "";
@@ -20,7 +20,7 @@ const std::string converter(const char* ip) {
 		part += '.';
 		convertedAddr.insert(0, part);
 	}
-	convertedAddr.append(spamhaus_dnsbl);
+	convertedAddr.append(spamhaus_org);
 	return convertedAddr;
 }
 
@@ -34,7 +34,7 @@ const char* receivedDescription(const char* return_code) {
 	}
 
 	if (!strcmp(lastOctet, "2")) {
-		return "SBL	- Spamhaus SBL Data";
+		return "SBL  - Spamhaus SBL Data";
 	}
 	else if (!strcmp(lastOctet, "3")) {
 		return "SBL - Spamhaus SBL CSS Data";
